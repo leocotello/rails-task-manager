@@ -1,0 +1,19 @@
+<%= form_with model: @task, local: true do |form| %>
+  <div class="mb-3">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :details %>
+    <%= form.text_area :details, class: 'form-control' %>
+  </div>
+  <% unless @task.new_record? %>
+    <div class="mb-3">
+      <%= form.label :completed %>
+      <%= form.check_box :completed %>
+    </div>
+  <% end %>
+  <div class="mb-3">
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>
